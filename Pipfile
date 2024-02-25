@@ -8,6 +8,7 @@ django = "==3.2.1"
 gunicorn = "*"
 whitenoise = "*"
 psycopg2 = "*"
+django-countries = "*"
 
 [dev-packages]
 

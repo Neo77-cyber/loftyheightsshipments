@@ -10,5 +10,8 @@ urlpatterns = [
     path('signin/', views.signin, name = 'signin' ),
     path('register/', views.register, name = 'register' ),
     path('dashboard/', views.dashboard, name = 'dashboard' ),
+    path('create-shipping/', views.create_shipping, name = 'createshipping' ),
+    path('update-shipping/', views.update_shipping, name = 'updateshipping' ),
+    path('shipping-details/', views.shipping_details, name = 'shippingdetails' ),
     path('logout', views.logout, name = 'logout'),       
 ]

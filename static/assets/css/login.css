@@ -8,39 +8,55 @@
   --gray: #e0e0e0;
 }
 
-.login-screen {
-  display: flex;
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-  /* width: 100vw; */
-  overflow: hidden;
+.login-hero {
+  background-image: url("../images/plane-cardboard-boxes-high-angle.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
 }
 
-.illustration {
-  width: 55%;
-  background-color: var(--yellow);
-}
-
-.illustration img {
-  height: 100%;
+.login-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.hero-light-text {
+  text-align: center;
+  color: black;
+  margin-bottom: 20px;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
 }
 
-.form {
-  width: 45%;
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
+/* ndfkjn */
+#login-form {
+  width: 100%;
+  min-height: 400px;
+  height: 80%;
   background-color: var(--white);
   padding: 40px;
+  border-radius: 10px;
   box-sizing: border-box;
-}
-
-.form h1 {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-size: 2rem;
-  color: var(--yellow);
-  margin: 0 0 20px 0;
 }
 
 .form p {
@@ -51,18 +67,18 @@
   margin: 0 0 20px 0;
 }
 
-.form form {
+#login-form {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
-  /* align-items: center;
+  align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%; */
+  height: 100%; 
 }
 
 .input-group {
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin: 0 0 20px 0;
 }
@@ -81,11 +97,24 @@
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 16px;
-  color: var(--gray);
+  color: black;
   padding: 10px;
-  border: 1px solid var(--gray);
+  border: 1px solid black;
   border-radius: 5px;
   outline: none;
+  height: 2.5rem;
+}
+
+::placeholder{
+  font-size: .7rem;
+}
+
+.forgot-password{
+  text-align: right;
+}
+.forgot-password a{
+  font-size: .7rem !important;
+  color: black !important;
 }
 
 /* Style the input group checkbox */
@@ -121,17 +150,20 @@
   opacity: 0.8;
 }
 
+.info-text{
+  color: white;
+  text-align: center;
+}
+.info-text a{
+  color: var(--gray);
+  text-decoration: none;
+}
+
 /* Make the login screen responsive for smaller screens */
 @media screen and (max-width: 768px) {
-  /* Stack the illustration and form containers vertically */
-  .login-screen {
-    flex-direction: column;
-  }
 
-  /* Adjust the height and width of the illustration container */
-  .illustration {
-    height: 50%;
-    width: 100%;
+  .hero-text{
+    width: 90%;
   }
 
   /* Adjust the height and width of the form container */

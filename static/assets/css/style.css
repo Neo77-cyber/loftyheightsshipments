@@ -32,7 +32,8 @@ body {
 }
 
 .navbar.sticky {
-  background-color: white;
+    backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(5px); */
 }
 
 .logo {
@@ -98,6 +99,10 @@ body {
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+.hidden{
+  display: none;
 }
 
 .slide.active {
@@ -282,6 +287,7 @@ body {
 
   .logo {
     float: none;
+    font-size: 1.3rem;
   }
 
   .nav-links {
@@ -367,7 +373,7 @@ body {
 
 /* cards align on carousel */
 .card-section {
-  position: absolute;
+  /* position: absolute; */
   bottom: -45%;
   padding: 40px;
 }
@@ -794,5 +800,59 @@ footer {
   }
   .footer-top section {
     margin-bottom: 20px;
+  }
+}
+
+/* for the tracking input on gome page */
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.track-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  margin-top: 1rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.track-label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+.track-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-grow: 1;
+  border: none !important;
+}
+
+.track-btn {
+  background-color: var(--yellow-text-color);
+  color: #fff;
+  padding: 8px 24px;
+  border: none !important;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.track-btn:hover {
+  background-color: #000000;
+}
+@media (max-width: 992px) {
+  .track-form{
+    margin: 1rem 2rem;
   }
 }

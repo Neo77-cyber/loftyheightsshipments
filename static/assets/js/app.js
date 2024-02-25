@@ -7,9 +7,13 @@ let currentSlide = 0;
 function showSlide(slideIndex) {
   slides.forEach((slide) => (slide.style.opacity = 0));
   slides[slideIndex].style.opacity = 1;
+  slides.forEach((slide, index) => {
+    // If the current slide matches the index, remove 'hidden', otherwise, add 'hidden'
+    slide.classList.toggle('hidden', index !== slideIndex);
+  });
 }
 
-let slideInterval = setInterval(nextSlide, 5000);
+// let slideInterval = setInterval(nextSlide, 5000);
 function nextSlide() {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);

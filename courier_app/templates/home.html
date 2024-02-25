@@ -46,6 +46,14 @@
               <a href="{% url 'contactus' %}" class="get-quote-btn">Get Quote</a>
               <a href="{% url 'aboutus' %}" class="learn-more-btn">Learn More</a>
             </div>
+            <form method = 'get' action="{% url 'shippingdetails' %}" class="track-form">
+              {% csrf_token %}
+              <div class="input-group">
+                  <input class="track-input" type="text" id="tracking-number" name="q" placeholder="Enter your tracking number" required>
+                  <button class="track-btn" type="submit">Track</button>
+              </div>
+            </form>
+           
           </div>
         </div>
         <div class="slide">
@@ -167,6 +175,7 @@
           <img src="{%static 'assets/images/h2-img-5.jpg' %}" alt="Fleet Image" />
         </div>
       </div>
+      
     </section>
 
     <!-- SERVICES SECTION -->
