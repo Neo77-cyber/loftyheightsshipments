@@ -4,21 +4,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'assets/css/style.css' %}" />
     <link rel="stylesheet" href="{%static 'assets/css/login.css' %}" />
     <title>LoftyHeights Shipments</title>
   </head>
   <body>
-    <!-- HTML code for the login design screen -->
-    <div class="login-screen">
-      <div class="illustration">
-        <!-- You can replace this image with your own illustration -->
-        <img src="{%static 'assets/images/box-4951485_1920.jpg' %}" alt="Courier illustration" />
+    <nav class="navbar">
+      <div class="logo">LoftyHeights Shipments</div>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'aboutus' %}">About</a></li>
+        <li><a href="{% url 'contactus' %}">Contact</a></li>
+        <li><a href="{% url 'signin' %}">Login</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
       </div>
-      <div class="form">
-        <h1>LoftyHeights Shipments</h1>
-        <p>Please enter your credentials to log in.</p>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="login-hero">
+      <div class="hero-text">
         <form id="login-form" action="" method="POST">
           {%csrf_token%}
+        <p class="hero-light-text">Please enter your credentials to log in.</p>
+
           <div class="input-group">
             <label for="username">Username</label>
             <input
@@ -38,6 +50,7 @@
               placeholder="Enter your password"
               required
             />
+            
           </div>
           <!-- <div class="input-group">
             <input type="checkbox" id="remember" name="remember" />
@@ -47,8 +60,14 @@
             <button type="submit" id="login-button">Log In</button>
           </div>
         </form>
-        <p>Don't have an account? <a href="{% url 'register' %}">Sign up here</a>.</p>
+
+        <p class="info-text">
+          <span>Don't have an account? </span>
+          <a href="{% url 'register' %}">Sign Up</a>
+        </p>
       </div>
-    </div>
+    </section>
+
   </body>
 </html>
+

@@ -13,7 +13,7 @@ function showSlide(slideIndex) {
   });
 }
 
-// let slideInterval = setInterval(nextSlide, 5000);
+let slideInterval = setInterval(nextSlide, 5000);
 function nextSlide() {
   currentSlide = (currentSlide + 1) % slides.length;
   showSlide(currentSlide);
