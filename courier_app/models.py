@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 STATUS_CHOICES = (
-    ('awaiting payment', 'AWAITING PAYMENT'),
-    ('consignment booked', 'CONSIGNMENT BOOKED'),
-    (' delivery scheduled', 'DELIVERY SCHEDULED'),
-    ('customs clearance', 'CUSTOMS CLEARANCE'),
-    ('delay. temporary volume surge', 'DELAY. TEMPORARY VOLUME SURGE'),
-    ('collected by customer at office', 'COLLECTED BY CUSTOMER AT OFFICE' )
+    ('prove of ownership', 'PROOF OF OWNERSHIP'),
+    ('Tax and insurance', 'TAX AND INSURANCE'),
+    ('Transit', 'TRANSIT'),
+    ('Sorting hub ', 'SORTING HUB'),
+    ('Inspection center', 'INSPECTION CENTER'),
+    
 
 )
 
@@ -24,12 +24,12 @@ class Shipping(models.Model):
     name_of_shipper = models.CharField(max_length=500)
     Recievers_name = models.CharField(max_length=500)
     product = models.CharField(max_length=500)
-    Origin = CountryField()
-    Destination = CountryField()
+    Origin = models.CharField(max_length=500)
+    Destination = models.CharField(max_length=500)
     Departure_time = models.TimeField(blank=True, null=True)
     departure_date = models.DateField(blank=True, null= True)
     pickup_date = models.DateField(blank=True, null=True)
-    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default = 'awaiting payment', blank=True, null=True)
+    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default = 'prove of ownership', blank=True, null=True)
 
     def __str__(self) -> str:
         return str(self.tracking_number)
