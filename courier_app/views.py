@@ -110,11 +110,6 @@ def shipping_details(request):
 
 
 
-@login_required(login_url='signin')
-def update_shipping(request):
-
-    
-    return render(request, 'update-shipment.html')
 
 
         

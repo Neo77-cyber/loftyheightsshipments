@@ -3,15 +3,7 @@ from django_countries.fields import CountryField
 from django.contrib.auth.models import User
 
 # Create your models here.
-STATUS_CHOICES = (
-    ('prove of ownership', 'PROOF OF OWNERSHIP'),
-    ('Tax and insurance', 'TAX AND INSURANCE'),
-    ('Transit', 'TRANSIT'),
-    ('Sorting hub ', 'SORTING HUB'),
-    ('Inspection center', 'INSPECTION CENTER'),
-    
 
-)
 
 
 class Shipping(models.Model):
@@ -29,7 +21,7 @@ class Shipping(models.Model):
     Departure_time = models.TimeField(blank=True, null=True)
     departure_date = models.DateField(blank=True, null= True)
     pickup_date = models.DateField(blank=True, null=True)
-    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default = 'prove of ownership', blank=True, null=True)
+    status = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self) -> str:
         return str(self.tracking_number)
