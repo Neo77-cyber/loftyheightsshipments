@@ -1,6 +1,7 @@
 from django.db import models
 from django_countries.fields import CountryField
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator
 
 # Create your models here.
 
@@ -8,7 +9,7 @@ from django.contrib.auth.models import User
 
 class Shipping(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, null = True)
-    tracking_number = models.IntegerField(blank=True, null=True)
+    tracking_number = models.PositiveIntegerField(unique=True, validators=[MaxValueValidator(9999999)])
     weight_in_kg = models.IntegerField()
     length_in_cm = models.IntegerField()
     height_in_cm = models.IntegerField()

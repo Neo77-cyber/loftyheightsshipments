@@ -65,7 +65,8 @@ def dashboard(request):
     total_orders = Shipping.objects.filter(user=request.user).count()
     
 
-    order_historys = Shipping.objects.filter(user=request.user)
+    order_historys = Shipping.objects.filter(user=request.user).order_by('pickup_date')
+    print(order_historys)
     
 
     return render(request, 'dashboard.html', {'total_orders': total_orders, 'order_historys': order_historys})
