@@ -9,7 +9,7 @@ from django.core.validators import MaxValueValidator
 
 class Shipping(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank= True, null = True)
-    tracking_number = models.PositiveIntegerField(unique=True, validators=[MaxValueValidator(9999999)])
+    tracking_number = models.CharField(max_length=500, blank=True, null=True)
     weight_in_kg = models.IntegerField()
     length_in_cm = models.IntegerField()
     height_in_cm = models.IntegerField()
@@ -23,6 +23,8 @@ class Shipping(models.Model):
     departure_date = models.DateField(blank=True, null= True)
     pickup_date = models.DateField(blank=True, null=True)
     status = models.CharField(max_length=500, blank=True, null=True)
+    longitude = models.CharField(max_length=500, blank=True, null=True)
+    lattitude = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self) -> str:
         return str(self.tracking_number)
