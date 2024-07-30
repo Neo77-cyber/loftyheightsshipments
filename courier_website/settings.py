@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'courier_website.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
-        default='postgres://rockwell_db_user:UrJawCuY9X654ZnGVYp9iBJWhIEOd03w@dpg-coh4t1ev3ddc73fh9pvg-a.oregon-postgres.render.com/rockwell_db',
+        default='postgres://bbhkxiyk:5LlJFIHJRk6AM6o0tZ3tJnApKnJeXQLW@mouse.db.elephantsql.com/bbhkxiyk',
         conn_max_age=600
     )
 }
